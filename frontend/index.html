@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCZ 110 Colombia | Repuestos Originales y Homologados Yamaha</title>
+    
+    <!-- Tailwind CSS para diseño estrictamente responsive (Móvil / Escritorio) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Estilos propios y animaciones del botón flotante de WhatsApp -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- SDK Oficial de MercadoPago V2 (Para tokenización PCI-DSS en el navegador) -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <!-- SDK Oficial de EmailJS v4 (Para notificaciones transaccionales de órdenes) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- BARRA DE NAVEGACIÓN RESPONSIVE -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur border-b border-blue-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="bg-blue-600 text-white font-black px-2.5 py-1 rounded text-lg tracking-wider">YCZ 110</span>
+                <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white">COLOMBIA <span class="text-blue-400 font-normal text-sm hidden sm:inline">| Repuestos Especializados</span></h1>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div id="indicador-contexto" class="hidden md:flex items-center text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">
+                    Viendo ahora: <strong id="nombre-repuesto-activo" class="ml-1 text-blue-400">Catálogo General YCZ 110</strong>
+                </div>
+                <button id="btn-abrir-checkout" class="relative bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                    <span>Carrito</span>
+                    <span id="contador-carrito" class="bg-slate-950 text-blue-400 px-2 py-0.5 rounded-full text-xs font-bold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="bg-gradient-to-b from-blue-950/40 to-slate-950 border-b border-slate-800/80 py-8 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-blue-400 font-bold">Despachos a todo el país</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1">Mantén tu Yamaha YCZ 110 al 100%</h2>
+                <p class="text-slate-400 mt-2 max-w-2xl text-sm sm:text-base">
+                    Catálogo especializado con pagos seguros tokenizados. Selecciona cualquier repuesto para comprarlo en línea o cotizarlo al instante por WhatsApp.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL: CATÁLOGO + PANEL DE CHECKOUT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+        
+        <!-- COLUMNA IZQUIERDA (2/3): GRILLA DE REPUESTOS YCZ 110 -->
+        <section class="lg:col-span-2">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-white">Repuestos Disponibles</h3>
+                <span class="text-xs text-slate-400">Haz clic en un repuesto para activar su contexto</span>
+            </div>
+            
+            <!-- Contenedor poblado de forma segura (Anti-XSS) desde app.js -->
+            <div id="contenedor-productos" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+        </section>
+
+        <!-- COLUMNA DERECHA (1/3): RESUMEN DE ORDEN Y PASARELA TOKENIZADA -->
+        <aside id="panel-checkout" class="bg-slate-900 border border-slate-800 rounded-xl p-6 h-fit sticky top-24">
+            <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-3">Resumen de tu Orden</h3>
+            
+            <ul id="lista-carrito" class="divide-y divide-slate-800 my-4 text-sm text-slate-300">
+                <li class="py-3 text-slate-500 italic">Tu carrito está vacío.</li>
+            </ul>
+
+            <div class="border-t border-slate-800 pt-4 space-y-2 text-sm">
+                <div class="flex justify-between font-bold text-base text-white">
+                    <span>Total Estimado:</span>
+                    <span id="total-carrito" class="text-blue-400">$0 COP</span>
+                </div>
+            </div>
+
+            <!-- Contenedor oficial donde MercadoPago inyecta su iframe aislado (PCI-DSS) -->
+            <div class="mt-6">
+                <p class="text-xs text-slate-400 mb-3">
+                    🔒 Pago 100% seguro: Tus datos de tarjeta se tokenizan directamente y nunca se guardan en nuestros servidores.
+                </p>
+                <div id="cardPaymentBrick_container" class="bg-slate-950 p-3 rounded-lg border border-slate-800"></div>
+                
+                <!-- Botón de demostración para simular el flujo completo cuando no hay llaves reales cargadas -->
+                <button id="btn-simular-pago-seguro" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg text-sm transition shadow-lg">
+                    Procesar Pago Tokenizado y Enviar EmailJS
+                </button>
+            </div>
+
+            <!-- Alerta de Estado de la Orden y Notificación EmailJS -->
+            <div id="alerta-transaccion" class="hidden mt-4 p-4 rounded-lg text-xs leading-relaxed"></div>
+        </aside>
+    </main>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP CON CAPTURA AUTOMÁTICA DE CONTEXTO -->
+    <a id="btn-whatsapp-contextual" 
+       href="https://wa.me/573001234567" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Cotizar repuesto actual por WhatsApp"
+       class="whatsapp-float group">
+        <div class="whatsapp-tooltip">
+            <span class="block text-[10px] uppercase tracking-wider text-emerald-300 font-bold">Cotización Directa</span>
+            <span id="texto-tooltip-wa" class="text-xs font-medium text-white">Cotizar repuestos YCZ 110</span>
+        </div>
+        <div class="whatsapp-icon-wrapper">
+            <!-- Icono SVG limpio de WhatsApp -->
+            <svg class="w-7 h-7 fill-current text-white" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Lógica modular del cliente -->
+    <script src="./js/app.js"></script>
+</body>
+</html>

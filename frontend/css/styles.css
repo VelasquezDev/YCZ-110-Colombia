@@ -1,0 +1,68 @@
+/* =============================================================================
+   PROYECTO: YCZ 110 Colombia
+   ARCHIVO: frontend/css/styles.css
+   PROPÓSITO: Estilos responsivos del botón flotante de WhatsApp y tarjetas activas
+   ============================================================================= */
+
+/* Contenedor flotante fijo en la esquina inferior derecha (Móvil y Escritorio) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+/* Globo informativo que muestra el repuesto exacto capturado en el contexto */
+.whatsapp-tooltip {
+    background-color: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+    max-width: 240px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    transform: translateX(-4px);
+    border-color: #10b981;
+}
+
+/* Botón circular verde con efecto de pulso suave para atraer conversión */
+.whatsapp-icon-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.45);
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover .whatsapp-icon-wrapper {
+    transform: scale(1.08);
+}
+
+/* Resaltado visual de la tarjeta de repuesto que el usuario está inspeccionando */
+.producto-card-activa {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35);
+}
+
+/* Ajuste para pantallas móviles pequeñas: compactar el tooltip para no tapar contenido */
+@media (max-width: 640px) {
+    .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .whatsapp-tooltip {
+        max-width: 185px;
+        padding: 0.35rem 0.65rem;
+    }
+}
