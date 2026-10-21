@@ -1,21 +1,18 @@
 # =============================================================================
-# PROYECTO: YCZ 110 Colombia
-# ARCHIVO: netlify.toml (Configuración de Despliegue y Seguridad en el Edge)
+# PROYECTO: YCZ 110 Colombia - Configuración de Despliegue y Seguridad en el Edge
 # =============================================================================
 
 [build]
-  # Carpeta que contiene los activos estáticos del Frontend
   publish = "."
 
-# Proxy inverso: Enruta las llamadas /api/* hacia tu Backend o Netlify Function
-# Esto evita problemas de terceros con cookies SameSite=Strict
+# Proxy inverso: Enruta las llamadas /api/* hacia tu Backend en Render
 [[redirects]]
   from = "/api/*"
-  to = "https://ycz-110-colombia.onrender.com"
+  to = "https://ycz-110-colombia.onrender.com/api/:splat"
   status = 200
   force = true
 
-# Cabeceras de Ciberseguridad OWASP inyectadas directamente por el CDN de Netlify
+# Cabeceras de Ciberseguridad OWASP optimizadas para permitir SDKs externos
 [[headers]]
   for = "/*"
   [headers.values]
@@ -23,5 +20,6 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    # Content Security Policy (CSP): Autoriza únicamente scripts propios, Tailwind, MercadoPago y EmailJS
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://sdk.mercadopago.com https://cdn.jsdelivr.net; connect-src 'self' https://api.mercadopago.com https://api.emailjs.com; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline'; frame-src https://*.mercadopago.com;"
+    
+    # CSP Actualizada: Autoriza scripts, iframes, pasarelas de pago y analíticas de MP
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://sdk.mercadopago.com https://cdn.jsdelivr.net https://http2.mlstatic.com; connect-src 'self' https://api.mercadopago.com https://api.mercadolibre.com https://api.emailjs.com; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline'; frame-src https://*.mercadopago.com https://*.mercadolibre.com;"
