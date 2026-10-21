@@ -14,11 +14,11 @@
 // -----------------------------------------------------------------------------
 const CONFIG = {
     API_BASE_URL: "/api", // Enrutado por el proxy de Netlify para mantener Same-Origin
-    WHATSAPP_NUMERO: "573001234567", // Número comercial de YCZ 110 Colombia
-    EMAILJS_PUBLIC_KEY: "TU_EMAILJS_PUBLIC_KEY",
+    WHATSAPP_NUMERO: "57304663976", // Número comercial de YCZ 110 Colombia
+    EMAILJS_PUBLIC_KEY: "PPpAhPQgC2dp_QB_T",
     EMAILJS_SERVICE_ID: "service_ycz110_col",
     EMAILJS_TEMPLATE_ID: "template_orden_ycz110",
-    MP_PUBLIC_KEY: "TEST-00000000-0000-0000-0000-000000000000"
+    MP_PUBLIC_KEY: "APP_USR-45454ff6-d7e7-453d-a696-6f5097618fcb"
 };
 
 // Estado en memoria (Nunca guardamos JWT ni datos de tarjetas en localStorage)

@@ -5,13 +5,13 @@
 
 [build]
   # Carpeta que contiene los activos estáticos del Frontend
-  publish = "frontend"
+  publish = "."
 
 # Proxy inverso: Enruta las llamadas /api/* hacia tu Backend o Netlify Function
 # Esto evita problemas de terceros con cookies SameSite=Strict
 [[redirects]]
   from = "/api/*"
-  to = "https://api-ycz110-colombia.onrender.com/api/:splat"
+  to = "https://ycz-110-colombia.onrender.com"
   status = 200
   force = true
 
