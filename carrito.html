@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112228">
+  <title>Checkout | YCZ 110 Colombia</title>
+  <meta name="description" content="Completa tus datos de envío, elige el método de entrega y confirma tu pedido de repuestos YCZ 110.">
+  <link rel="canonical" href="https://TU-DOMINIO.netlify.app/carrito.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="YCZ 110 Colombia">
+  <meta property="og:title" content="Finaliza tu pedido | YCZ 110 Colombia">
+  <meta property="og:description" content="Revisa tu carrito y confirma el pedido de repuestos YCZ 110.">
+  <meta property="og:url" content="https://TU-DOMINIO.netlify.app/carrito.html">
+  <meta property="og:image" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
+  <meta property="og:image:secure_url" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="YCZ 110 Colombia, repuestos para tu moto">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Finaliza tu pedido | YCZ 110 Colombia">
+  <meta name="twitter:description" content="Revisa tu carrito y confirma el pedido de repuestos YCZ 110.">
+  <meta name="twitter:image" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-ycz.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- EmailJS: reemplaza las credenciales en checkout.js antes de publicar. -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="supabase-config.js" defer></script>
+  <script src="productos.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="checkout.js" defer></script>
+</head>
+<body class="checkout-page">
+  <a class="skip-link" href="#checkout-main">Saltar al formulario</a>
+  <div class="top-strip"><div class="container top-strip__inner"><span><span class="status-dot"></span> Tu pedido, en unos pasos</span><span class="top-strip__right">Checkout YCZ 110 Colombia</span></div></div>
+  <header class="site-header"><div class="container header-main"><a class="brand" href="index.html" aria-label="YCZ 110 Colombia, volver al catálogo"><img src="assets/logo-ycz.svg" alt="YCZ 110 Colombia"></a><div class="checkout-header-title"><span class="checkout-lock" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span><span><strong>Finalizar compra</strong><small>Revisa tus datos antes de confirmar</small></span></div><a class="header-back-link" href="index.html"><span aria-hidden="true">←</span> Catálogo</a></div></header>
+
+  <main id="checkout-main" class="container checkout-main">
+    <div class="checkout-title-row"><div><p class="eyebrow"><span class="eyebrow-line"></span> CHECKOUT</p><h1>Completa tu <span>pedido.</span></h1><p class="section-subtitle">Tus productos quedan guardados en este navegador mientras completas la compra.</p></div><div class="checkout-step"><span>01</span><span>Datos y pago</span></div></div>
+
+    <section class="cart-empty panel-card" id="empty-state" hidden aria-labelledby="empty-title"><div class="empty-cart-illustration"><svg aria-hidden="true" viewBox="0 0 100 100"><path d="M15 18h8l8 42a7 7 0 0 0 7 5h33a7 7 0 0 0 7-5l8-28H29" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="42" cy="78" r="5" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="70" cy="78" r="5" fill="none" stroke="currentColor" stroke-width="4"/><path d="M43 35h21M53.5 24.5v21" stroke="#ef4e52" stroke-width="4" stroke-linecap="round"/></svg></div><p class="eyebrow">TU SIGUIENTE PARADA</p><h2 id="empty-title">Tu carrito está vacío</h2><p>Aún no has agregado repuestos. Explora el catálogo y encuentra lo que necesita tu YCZ 110.</p><a class="button button--primary button--large" href="index.html">Volver al catálogo <span aria-hidden="true">→</span></a></section>
+
+    <section class="order-confirmation panel-card" id="order-confirmation" hidden aria-labelledby="confirmation-title"><div class="confirmation-check"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></div><p class="eyebrow">PEDIDO REGISTRADO EN YCZ 110 COLOMBIA</p><h2 id="confirmation-title">¡Listo! Tu orden está creada.</h2><p class="confirmation-lead">Tu número de orden es <strong id="confirmation-order-number">YCZ-0000</strong>.</p><div class="confirmation-status"><span>Estado del pedido</span><strong><span class="status-dot"></span> <span id="confirmation-status">Esperando pago</span></strong></div><p class="confirmation-copy" id="confirmation-detail">El pago queda pendiente de verificación. Sigue las instrucciones de transferencia que acuerdes con el comercio.</p><div class="confirmation-email" id="email-status" role="status" aria-live="polite">Preparando correo de confirmación…</div><div class="confirmation-actions"><a class="button button--primary button--large" href="index.html">Volver al catálogo <span aria-hidden="true">→</span></a><a class="button button--secondary button--large" href="index.html#catalogo">Seguir comprando</a></div><p class="fallback-note" id="whatsapp-fallback-note" hidden>El navegador bloqueó la apertura automática. Para enviar la orden, abre WhatsApp con el botón de abajo. El carrito se limpiará al iniciar ese enlace.</p><a class="button button--whatsapp" id="whatsapp-fallback-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Continuar a WhatsApp <span aria-hidden="true">↗</span></a><p class="order-local-note">La orden se registrará en la base de datos cuando Supabase y Netlify estén configurados.</p></section>
+
+    <form id="checkout-form" class="checkout-layout" novalidate hidden>
+      <div class="checkout-form-column">
+        <section class="panel-card form-panel" aria-labelledby="shipping-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2"></path></svg></span><div><p class="panel-kicker">PASO 1</p><h2 id="shipping-title">Datos de envío</h2><p>Cuéntanos quién recibe el pedido.</p></div></div>
+          <div class="form-grid">
+            <div class="form-field"><label for="first-name">Nombre(s) <span>*</span></label><input id="first-name" name="firstName" type="text" autocomplete="given-name" placeholder="Ej. Juan Carlos" required aria-describedby="error-first-name"><small class="field-error" id="error-first-name"></small></div>
+            <div class="form-field"><label for="last-name">Apellido(s) <span>*</span></label><input id="last-name" name="lastName" type="text" autocomplete="family-name" placeholder="Ej. Pérez Gómez" required aria-describedby="error-last-name"><small class="field-error" id="error-last-name"></small></div>
+            <div class="form-field"><label for="department">Departamento <span>*</span></label><select id="department" name="department" autocomplete="address-level1" required aria-describedby="error-department"><option value="">Selecciona tu departamento</option></select><small class="field-error" id="error-department"></small></div>
+            <div class="form-field"><label for="city">Ciudad / municipio <span>*</span></label><select id="city" name="city" autocomplete="address-level2" required disabled aria-describedby="error-city"><option value="">Primero selecciona el departamento</option></select><small class="field-error" id="error-city"></small></div>
+            <div class="form-field form-field--full"><label for="address">Dirección <span>*</span></label><input id="address" name="address" type="text" autocomplete="street-address" placeholder="Ej. Calle 10 # 20-30, apto. 301" required aria-describedby="error-address"><small class="field-error" id="error-address"></small></div>
+            <div class="form-field form-field--full"><label for="address-details">Detalles de dirección <span class="optional-label">Opcional</span></label><input id="address-details" name="addressDetails" type="text" placeholder="Torre, interior, indicaciones para llegar" autocomplete="off"></div>
+            <div class="form-field"><label for="phone">Teléfono <span>*</span></label><input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="Solo números" maxlength="15" required aria-describedby="error-phone"><small class="field-hint">Incluye el número de contacto del destinatario.</small><small class="field-error" id="error-phone"></small></div>
+            <div class="form-field"><label for="email">Correo electrónico <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required aria-describedby="error-email"><small class="field-error" id="error-email"></small></div>
+          </div>
+        </section>
+
+        <section class="panel-card form-panel" aria-labelledby="notes-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M8 13h8M8 17h6"></path></svg></span><div><p class="panel-kicker">PASO 2</p><h2 id="notes-title">Notas del pedido</h2><p>¿Hay alguna indicación adicional?</p></div></div><div class="form-field"><label for="order-notes">Notas para el comercio <span class="optional-label">Opcional</span></label><textarea id="order-notes" name="notes" rows="3" maxlength="500" placeholder="Detalles importantes para preparar o entregar tu pedido..."></textarea><div class="textarea-meta"><span>No incluyas información de pago sensible.</span><span id="notes-count">0 / 500</span></div></div></section>
+
+        <section class="panel-card form-panel" aria-labelledby="delivery-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></span><div><p class="panel-kicker">PASO 3</p><h2 id="delivery-title">Método de entrega</h2><p>El costo se suma al total de tu compra.</p></div></div><fieldset class="delivery-options"><legend class="sr-only">Selecciona un método de entrega</legend><label class="delivery-option"><input type="radio" name="deliveryMethod" value="metropolitana" data-fee="15000" checked><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Domicilio área metropolitana</strong><small>Entrega local coordinada con el comercio</small></span><strong class="delivery-price">+$15.000</strong></label><label class="delivery-option"><input type="radio" name="deliveryMethod" value="nacional" data-fee="25000"><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Envío nacional</strong><small>Para destinos fuera del área metropolitana</small></span><strong class="delivery-price">+$25.000</strong></label><label class="delivery-option"><input type="radio" name="deliveryMethod" value="recoger" data-fee="0"><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Recoger en tienda</strong><small>Coordina el punto y horario con el comercio</small></span><strong class="delivery-price delivery-price--free">Gratis</strong></label></fieldset><small class="delivery-disclaimer">Los costos son de ejemplo y deben confirmarse con el comercio según el destino.</small></section>
+
+        <section class="panel-card form-panel payment-panel" aria-labelledby="payment-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></span><div><p class="panel-kicker">PASO 4</p><h2 id="payment-title">Método de pago</h2><p>El comercio te indicará los datos para transferir.</p></div></div><div class="payment-method"><span class="payment-method__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 10h14M6 10v8m4-8v8m4-8v8m4-8v8M3 21h18M4 18h16"></path></svg></span><div><strong>Transferencia bancaria directa</strong><p>Método de pago habilitado: Transferencia bancaria directa.</p><span class="payment-badge">Confirmación pendiente</span></div></div><p class="payment-warning"><span aria-hidden="true">ⓘ</span> Este prototipo no procesa pagos ni verifica transferencias. No ingreses contraseñas ni datos bancarios aquí.</p></section>
+      </div>
+
+      <aside class="checkout-summary panel-card" aria-labelledby="summary-title"><div class="summary-heading"><div><p class="panel-kicker">TU COMPRA</p><h2 id="summary-title">Resumen de compra</h2></div><span class="summary-item-count" id="summary-item-count">0 items</span></div><div id="order-items" class="order-items"></div><div class="summary-calculation"><div><span>Subtotal</span><strong id="subtotal-value">$ 0</strong></div><div><span>Envío</span><strong id="shipping-value">$ 15.000</strong></div><div class="summary-total"><span>Total a pagar</span><strong id="total-value">$ 15.000</strong></div></div><div class="summary-payment-note"><span class="summary-payment-note__dot"></span><span>Transferencia bancaria directa<small>El inventario se valida al confirmar el pedido.</small></span></div><p class="checkout-error" id="checkout-error" role="alert" hidden></p><button class="button button--primary button--confirm" id="confirm-order" type="submit">Confirmar pedido <span aria-hidden="true">→</span></button><p class="summary-legal">Al confirmar, se preparará una orden y se abrirá WhatsApp para enviarla al comercio.</p><a class="continue-shopping" href="index.html">← Seguir comprando</a></aside>
+    </form>
+  </main>
+
+  <footer class="site-footer checkout-footer"><div class="container footer-bottom"><span>© <span id="current-year"></span> YCZ 110 Colombia. Inventario y órdenes sincronizados.</span><a href="index.html">Volver al catálogo</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112228">
+  <title>YCZ 110 Colombia | Repuestos para tu moto</title>
+  <meta name="description" content="Encuentra repuestos y consumibles para Yamaha YCZ 110. Explora el catálogo, arma tu carrito y solicita tu pedido en línea.">
+  <link rel="canonical" href="https://TU-DOMINIO.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="YCZ 110 Colombia">
+  <meta property="og:title" content="YCZ 110 Colombia | Repuestos para tu moto">
+  <meta property="og:description" content="Repuestos para tu Yamaha YCZ 110. Encuentra lo que necesitas y arma tu pedido en línea.">
+  <meta property="og:url" content="https://TU-DOMINIO.netlify.app/">
+  <meta property="og:image" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
+  <meta property="og:image:secure_url" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="YCZ 110 Colombia, repuestos para tu moto">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YCZ 110 Colombia | Repuestos para tu moto">
+  <meta name="twitter:description" content="Repuestos y consumibles para Yamaha YCZ 110.">
+  <meta name="twitter:image" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-ycz.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Supabase: clave pública de solo lectura para el catálogo (configurar en supabase-config.js). -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="supabase-config.js" defer></script>
+  <script src="productos.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+  <div class="top-strip"><div class="container top-strip__inner"><span><span class="status-dot"></span> Repuestos para Yamaha YCZ 110</span><span class="top-strip__right">Atención en Colombia <span aria-hidden="true">·</span> Compra fácil y segura</span></div></div>
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="index.html" aria-label="YCZ 110 Colombia, inicio"><img src="assets/logo-ycz.svg" alt="YCZ 110 Colombia"></a>
+      <form class="header-search" id="search-form" role="search">
+        <label class="sr-only" for="search-input">Buscar repuestos</label>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        <input id="search-input" type="search" placeholder="Busca un repuesto..." autocomplete="off" aria-label="Buscar por nombre de repuesto">
+        <kbd>⌕</kbd>
+      </form>
+      <nav class="header-actions" aria-label="Navegación principal">
+        <a class="header-link header-link--cart" href="carrito.html" aria-label="Ir al carrito">
+          <span class="cart-icon-wrap"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle></svg><span class="cart-count" data-cart-count>0</span></span>
+          <span class="header-link__label">Mi carrito</span>
+        </a>
+      </nav>
+    </div>
+    <div class="container header-mobile-search"><label class="sr-only" for="search-input-mobile">Buscar repuestos</label><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg><input id="search-input-mobile" type="search" placeholder="Busca un repuesto..." autocomplete="off" aria-label="Buscar por nombre de repuesto"></div>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> PARA TU YCZ 110</p>
+        <h1 id="hero-title">Tu moto lista.<br><span>Tu camino también.</span></h1>
+        <p class="hero__lead">Encuentra repuestos esenciales para mantener tu Yamaha en movimiento. Explora el catálogo y arma tu pedido en unos pasos.</p>
+        <div class="hero__actions"><a class="button button--primary" href="#catalogo">Explorar repuestos <span aria-hidden="true">↘</span></a><span class="hero__micro"><span class="hero__micro-icon">✓</span> Catálogo para YCZ 110</span></div>
+        <div class="hero-metrics"><div><strong>01</strong><span>Busca tu repuesto</span></div><div><strong>02</strong><span>Añade al carrito</span></div><div><strong>03</strong><span>Confirma tu pedido</span></div></div>
+      </div>
+      <div class="hero__visual"><div class="hero-visual__glow"></div><img src="assets/ycz-hero.svg" alt="Ilustración de referencia de una motocicleta urbana"><div class="hero-note"><span class="hero-note__dot"></span><span><strong>Enfocado en YCZ 110</strong><small>Repuestos y mantenimiento</small></span></div><div class="hero-serial">YCZ / 110 <span>COLOMBIA</span></div></div>
+    </section>
+
+    <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> CATÁLOGO</p><h2 id="catalog-title">Repuestos destacados<span class="heading-period">.</span></h2><p class="section-subtitle">Piezas para el día a día y el mantenimiento de tu moto.</p></div><div class="catalog-count"><strong id="results-count">9</strong><span>productos<br>disponibles</span></div></div>
+        <div class="category-scroller" aria-label="Filtrar por categoría"><div class="category-list" id="category-filters">
+          <button class="category-chip is-active" type="button" data-category="Todos" aria-pressed="true">Todos <span class="category-chip__count" data-category-count="Todos">9</span></button>
+          <button class="category-chip" type="button" data-category="Motor" aria-pressed="false">Motor <span class="category-chip__count" data-category-count="Motor">2</span></button>
+          <button class="category-chip" type="button" data-category="Transmisión" aria-pressed="false">Transmisión <span class="category-chip__count" data-category-count="Transmisión">1</span></button>
+          <button class="category-chip" type="button" data-category="Frenos" aria-pressed="false">Frenos <span class="category-chip__count" data-category-count="Frenos">2</span></button>
+          <button class="category-chip" type="button" data-category="Eléctricos" aria-pressed="false">Eléctricos <span class="category-chip__count" data-category-count="Eléctricos">2</span></button>
+          <button class="category-chip" type="button" data-category="Mandos" aria-pressed="false">Mandos <span class="category-chip__count" data-category-count="Mandos">2</span></button>
+        </div></div>
+        <div class="catalog-toolbar"><p id="catalog-status" aria-live="polite">Mostrando todos los repuestos</p><label class="sort-control" for="sort-select">Ordenar por <select id="sort-select"><option value="featured">Destacados</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option><option value="name-asc">Nombre A–Z</option></select></label></div>
+        <div id="product-grid" class="product-grid" aria-live="polite" aria-busy="false"></div>
+        <div id="no-products" class="empty-search" hidden><div class="empty-search__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path><path d="M8 11h5"></path></svg></div><h3>No encontramos ese repuesto</h3><p>Prueba con otro nombre o cambia la categoría para ver más opciones.</p><button type="button" class="button button--secondary" id="clear-search">Limpiar búsqueda</button></div>
+        <p class="fitment-note"><span aria-hidden="true">ⓘ</span> Las imágenes y precios son demostrativos. Confirma año, versión y referencia del repuesto antes de comprar.</p>
+      </div>
+    </section>
+
+    <section class="trust-section"><div class="container trust-grid"><article class="trust-item"><span class="trust-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"></path></svg></span><div><h3>Compra sencilla</h3><p>Agrega productos y revisa tu resumen en el carrito.</p></div></article><article class="trust-item"><span class="trust-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></span><div><h3>Opciones de entrega</h3><p>Selecciona el método que se ajuste a tu ubicación.</p></div></article><article class="trust-item"><span class="trust-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg></span><div><h3>Datos bajo tu control</h3><p>Revisa los datos de envío antes de generar tu orden.</p></div></article></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><a class="brand brand--footer" href="index.html"><img src="assets/logo-ycz.svg" alt="YCZ 110 Colombia"></a><p>Repuestos para tu ruta, soporte para tu día a día.</p><a class="footer-cart-link" href="carrito.html">Ir al carrito <span aria-hidden="true">→</span></a></div><div class="container footer-bottom"><span>© <span id="current-year"></span> YCZ 110 Colombia. Inventario sincronizado.</span><span>Netlify + Supabase</span></div></footer>
+
+  <dialog class="product-dialog" id="product-dialog" aria-labelledby="dialog-title"><div class="dialog-content"><button class="dialog-close" type="button" id="dialog-close" aria-label="Cerrar detalles">×</button><div id="dialog-product-content"></div></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

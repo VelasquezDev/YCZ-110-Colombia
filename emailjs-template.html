@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Confirmación de pedido | YCZ 110 Colombia</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f0f3f4;font-family:Arial,Helvetica,sans-serif;color:#17282d;">
+  <!-- Preheader: texto que algunos clientes muestran junto al asunto -->
+  <div style="display:none;font-size:1px;color:#f0f3f4;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+    Recibimos tu pedido {{order_number}}. Estado actual: {{order_status}}.
+  </div>
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background-color:#f0f3f4;border-collapse:collapse;">
+    <tr>
+      <td align="center" style="padding:28px 12px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:100%;max-width:600px;border-collapse:separate;border-spacing:0;background-color:#ffffff;border-radius:12px;overflow:hidden;">
+          <!-- Encabezado -->
+          <tr>
+            <td style="padding:26px 28px 24px;background-color:#112228;border-bottom:5px solid #c83b43;">
+              <p style="margin:0 0 7px;font-size:12px;line-height:18px;letter-spacing:2px;font-weight:bold;color:#cbd4d7;">REPUESTOS PARA TU MOTO</p>
+              <h1 style="margin:0;font-size:25px;line-height:32px;letter-spacing:.5px;color:#ffffff;font-weight:800;">YCZ 110 <span style="color:#d9e0e2;font-weight:400;">COLOMBIA</span></h1>
+              <p style="margin:9px 0 0;font-size:14px;line-height:21px;color:#d2dcdf;">Confirmación de tu pedido</p>
+            </td>
+          </tr>
+
+          <!-- Mensaje principal -->
+          <tr>
+            <td style="padding:28px 28px 12px;">
+              <p style="margin:0 0 12px;font-size:16px;line-height:24px;">Hola, <strong>{{customer_name}}</strong>.</p>
+              <p style="margin:0;font-size:14px;line-height:23px;color:#52646a;">Recibimos los datos de tu pedido. A continuación encontrarás el resumen para que puedas revisar los productos, la dirección y el valor antes de realizar la transferencia.</p>
+            </td>
+          </tr>
+
+          <!-- Orden y estado -->
+          <tr>
+            <td style="padding:12px 28px 22px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-collapse:collapse;background-color:#f4f7f7;border:1px solid #e0e7e8;border-radius:8px;">
+                <tr>
+                  <td style="padding:16px 16px 14px;">
+                    <p style="margin:0 0 5px;font-size:11px;line-height:16px;text-transform:uppercase;letter-spacing:1px;color:#62747a;">Número de orden</p>
+                    <p style="margin:0;font-size:24px;line-height:31px;font-weight:800;color:#112228;">{{order_number}}</p>
+                  </td>
+                  <td align="right" valign="middle" style="padding:16px;">
+                    <span style="display:inline-block;padding:7px 10px;border-radius:20px;background-color:#fff0f0;border:1px solid #f0c5c8;color:#a62e36;font-size:12px;line-height:16px;font-weight:bold;">{{order_status}}</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Productos -->
+          <tr>
+            <td style="padding:0 28px 22px;">
+              <h2 style="margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid #e1e7e8;font-size:16px;line-height:22px;color:#112228;">Resumen de productos</h2>
+              <div style="font-size:14px;line-height:24px;color:#263b41;white-space:pre-line;overflow-wrap:anywhere;word-break:break-word;">{{order_items}}</div>
+            </td>
+          </tr>
+
+          <!-- Totales -->
+          <tr>
+            <td style="padding:0 28px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-collapse:collapse;">
+                <tr>
+                  <td style="padding:9px 0;border-bottom:1px solid #edf0f1;font-size:14px;line-height:20px;color:#5b6c71;">Subtotal</td>
+                  <td align="right" style="padding:9px 0;border-bottom:1px solid #edf0f1;font-size:14px;line-height:20px;color:#263b41;font-weight:bold;">{{subtotal}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 0;border-bottom:1px solid #edf0f1;font-size:14px;line-height:20px;color:#5b6c71;">Envío</td>
+                  <td align="right" style="padding:9px 0;border-bottom:1px solid #edf0f1;font-size:14px;line-height:20px;color:#263b41;font-weight:bold;">{{shipping_cost}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:15px 0 5px;font-size:16px;line-height:22px;color:#112228;font-weight:bold;">Total a pagar</td>
+                  <td align="right" style="padding:15px 0 5px;font-size:21px;line-height:27px;color:#112228;font-weight:800;">{{total}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Entrega -->
+          <tr>
+            <td style="padding:0 28px 23px;">
+              <h2 style="margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid #e1e7e8;font-size:16px;line-height:22px;color:#112228;">Datos de entrega</h2>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-collapse:collapse;">
+                <tr>
+                  <td valign="top" width="125" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Destinatario</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;font-weight:bold;">{{customer_name}}</td>
+                </tr>
+                <tr>
+                  <td valign="top" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Correo</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;">{{customer_email}}</td>
+                </tr>
+                <tr>
+                  <td valign="top" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Teléfono</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;">{{customer_phone}}</td>
+                </tr>
+                <tr>
+                  <td valign="top" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Departamento</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;">{{customer_department}}</td>
+                </tr>
+                <tr>
+                  <td valign="top" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Ciudad</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;">{{customer_city}}</td>
+                </tr>
+                <tr>
+                  <td valign="top" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Dirección</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;">{{shipping_address}}</td>
+                </tr>
+                <tr>
+                  <td valign="top" style="padding:5px 8px 5px 0;font-size:13px;line-height:20px;color:#66777c;">Método de entrega</td>
+                  <td style="padding:5px 0;font-size:13px;line-height:20px;color:#263b41;">{{delivery_method}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Contacto y pago -->
+          <tr>
+            <td style="padding:0 28px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-collapse:collapse;background-color:#f7f8f8;border-left:4px solid #c83b43;">
+                <tr>
+                  <td style="padding:15px 16px;">
+                    <h2 style="margin:0 0 8px;font-size:15px;line-height:21px;color:#112228;">Método de pago</h2>
+                    <p style="margin:0 0 7px;font-size:13px;line-height:21px;color:#263b41;font-weight:bold;">{{payment_method}}</p>
+                    <p style="margin:0;font-size:13px;line-height:21px;color:#52646a;">Tu pedido está <strong>{{order_status}}</strong>. Este correo confirma la creación del pedido, pero no confirma que el pago haya sido recibido. Contacta a la tienda para obtener o confirmar los datos de transferencia antes de pagar.</p>
+                    <p style="margin:10px 0 0;font-size:13px;line-height:21px;color:#9a6b1e;font-weight:bold;">{{availability_notice}}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Notas del pedido -->
+          <tr>
+            <td style="padding:0 28px 26px;">
+              <h2 style="margin:0 0 8px;font-size:15px;line-height:21px;color:#112228;">Notas del pedido</h2>
+              <p style="margin:0;font-size:13px;line-height:21px;color:#52646a;white-space:pre-line;overflow-wrap:anywhere;word-break:break-word;">{{order_notes}}</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:19px 28px;background-color:#112228;border-top:1px solid #293a3f;">
+              <p style="margin:0 0 6px;font-size:13px;line-height:20px;color:#ffffff;font-weight:bold;">YCZ 110 Colombia</p>
+              <p style="margin:0;font-size:11px;line-height:18px;color:#c6d0d3;">Correo de confirmación automática. Si necesitas corregir los datos del pedido, responde a este correo para contactar a la tienda.</p>
+            </td>
+          </tr>
+        </table>
+        <p style="margin:14px 8px 0;font-size:10px;line-height:16px;color:#829196;text-align:center;">Conserva el número de orden para futuras consultas: {{order_number}}</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
