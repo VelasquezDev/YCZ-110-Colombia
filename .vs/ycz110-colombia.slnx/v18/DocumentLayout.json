@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Angel\\Desktop\\ycz110-colombia\\supabase-config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:supabase-config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Angel\\Desktop\\ycz110-colombia\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Angel\\Desktop\\ycz110-colombia\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Angel\\Desktop\\ycz110-colombia\\carrito.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:carrito.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Angel\\Desktop\\ycz110-colombia\\checkout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:checkout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +39,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "supabase-config.js",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\supabase-config.js",
-              "RelativeDocumentMoniker": "supabase-config.js",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\supabase-config.js",
-              "RelativeToolTip": "supabase-config.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\styles.css",
+              "RelativeDocumentMoniker": "styles.css",
+              "ToolTip": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\styles.css",
+              "RelativeToolTip": "styles.css",
+              "ViewState": "AgIAABcEAAAAAAAAAAAIwBgEAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-31T00:16:15.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAADkAAAAAAAAAAAArwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-10-31T00:14:31.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "carrito.html",
+              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\carrito.html",
+              "RelativeDocumentMoniker": "carrito.html",
+              "ToolTip": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\carrito.html",
+              "RelativeToolTip": "carrito.html",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-10-31T00:12:20.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "checkout.js",
+              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\checkout.js",
+              "RelativeDocumentMoniker": "checkout.js",
+              "ToolTip": "C:\\Users\\Angel\\Desktop\\ycz110-colombia\\checkout.js",
+              "RelativeToolTip": "checkout.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYBAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-30T22:03:14.598Z",
+              "WhenOpened": "2026-10-30T23:26:20.619Z",
               "EditorCaption": ""
             }
           ]

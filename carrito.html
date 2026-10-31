@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Finaliza tu pedido | YCZ 110 Colombia">
   <meta name="twitter:description" content="Revisa tu carrito y confirma el pedido de repuestos YCZ 110.">
   <meta name="twitter:image" content="https://TU-DOMINIO.netlify.app/assets/og-ycz110.png">
-  <link rel="icon" type="image/svg+xml" href="assets/logo-ycz.svg">
+  <link rel="icon" type="image/png" href="assets/logo-ycz.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -38,11 +38,11 @@
 </head>
 <body class="checkout-page">
   <a class="skip-link" href="#checkout-main">Saltar al formulario</a>
-  <div class="top-strip"><div class="container top-strip__inner"><span><span class="status-dot"></span> Tu pedido, en unos pasos</span><span class="top-strip__right">Checkout YCZ 110 Colombia</span></div></div>
-  <header class="site-header"><div class="container header-main"><a class="brand" href="index.html" aria-label="YCZ 110 Colombia, volver al catálogo"><img src="assets/logo-ycz.svg" alt="YCZ 110 Colombia"></a><div class="checkout-header-title"><span class="checkout-lock" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span><span><strong>Finalizar compra</strong><small>Revisa tus datos antes de confirmar</small></span></div><a class="header-back-link" href="index.html"><span aria-hidden="true">←</span> Catálogo</a></div></header>
+  <div class="top-strip"><div class="container top-strip__inner"><span><span class="status-dot"></span> Lo que necesitas, en unos pasos</span><span class="top-strip__right">Checkout YCZ 110 Colombia</span></div></div>
+  <header class="site-header"><div class="container header-main"><a class="brand" href="index.html" aria-label="YCZ 110 Colombia, volver al catálogo"><img src="assets/logo-ycz.png" alt="YCZ 110 Colombia"></a><div class="checkout-header-title"><span class="checkout-lock" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span><span><strong>Finalizar compra</strong><small>Revisa tus datos antes de confirmar</small></span></div><a class="header-back-link" href="index.html"><span aria-hidden="true">←</span> Catálogo</a></div></header>
 
   <main id="checkout-main" class="container checkout-main">
-    <div class="checkout-title-row"><div><p class="eyebrow"><span class="eyebrow-line"></span> CHECKOUT</p><h1>Completa tu <span>pedido.</span></h1><p class="section-subtitle">Tus productos quedan guardados en este navegador mientras completas la compra.</p></div><div class="checkout-step"><span>01</span><span>Datos y pago</span></div></div>
+    <div class="checkout-title-row"><div><p class="eyebrow"><span class="eyebrow-line"></span> CHECKOUT</p><h1>Completa tu <span>pedido.</span></h1><p class="section-subtitle">¿Se te olvidó algo? Relax, tus productos quedan guardados en este navegador mientras completas la compra.</p></div><div class="checkout-step"><span>01</span><span>Datos y pago</span></div></div>
 
     <section class="cart-empty panel-card" id="empty-state" hidden aria-labelledby="empty-title"><div class="empty-cart-illustration"><svg aria-hidden="true" viewBox="0 0 100 100"><path d="M15 18h8l8 42a7 7 0 0 0 7 5h33a7 7 0 0 0 7-5l8-28H29" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="42" cy="78" r="5" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="70" cy="78" r="5" fill="none" stroke="currentColor" stroke-width="4"/><path d="M43 35h21M53.5 24.5v21" stroke="#ef4e52" stroke-width="4" stroke-linecap="round"/></svg></div><p class="eyebrow">TU SIGUIENTE PARADA</p><h2 id="empty-title">Tu carrito está vacío</h2><p>Aún no has agregado repuestos. Explora el catálogo y encuentra lo que necesita tu YCZ 110.</p><a class="button button--primary button--large" href="index.html">Volver al catálogo <span aria-hidden="true">→</span></a></section>
 
@@ -63,17 +63,57 @@
           </div>
         </section>
 
-        <section class="panel-card form-panel" aria-labelledby="notes-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M8 13h8M8 17h6"></path></svg></span><div><p class="panel-kicker">PASO 2</p><h2 id="notes-title">Notas del pedido</h2><p>¿Hay alguna indicación adicional?</p></div></div><div class="form-field"><label for="order-notes">Notas para el comercio <span class="optional-label">Opcional</span></label><textarea id="order-notes" name="notes" rows="3" maxlength="500" placeholder="Detalles importantes para preparar o entregar tu pedido..."></textarea><div class="textarea-meta"><span>No incluyas información de pago sensible.</span><span id="notes-count">0 / 500</span></div></div></section>
+        <section class="panel-card form-panel" aria-labelledby="notes-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M8 13h8M8 17h6"></path></svg></span><div><p class="panel-kicker">PASO 2</p><h2 id="notes-title">Notas del pedido</h2><p>¿Hay alguna indicación adicional?</p></div></div><div class="form-field"><label for="order-notes">Déjanos una nota para tener en cuenta en tu pedido <span class="optional-label">Opcional</span></label><textarea id="order-notes" name="notes" rows="3" maxlength="500" placeholder="Detalles importantes para preparar o entregar tu pedido..."></textarea><div class="textarea-meta"><span>No incluyas información de pago sensible.</span><span id="notes-count">0 / 500</span></div></div></section>
 
-        <section class="panel-card form-panel" aria-labelledby="delivery-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></span><div><p class="panel-kicker">PASO 3</p><h2 id="delivery-title">Método de entrega</h2><p>El costo se suma al total de tu compra.</p></div></div><fieldset class="delivery-options"><legend class="sr-only">Selecciona un método de entrega</legend><label class="delivery-option"><input type="radio" name="deliveryMethod" value="metropolitana" data-fee="15000" checked><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Domicilio área metropolitana</strong><small>Entrega local coordinada con el comercio</small></span><strong class="delivery-price">+$15.000</strong></label><label class="delivery-option"><input type="radio" name="deliveryMethod" value="nacional" data-fee="25000"><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Envío nacional</strong><small>Para destinos fuera del área metropolitana</small></span><strong class="delivery-price">+$25.000</strong></label><label class="delivery-option"><input type="radio" name="deliveryMethod" value="recoger" data-fee="0"><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Recoger en tienda</strong><small>Coordina el punto y horario con el comercio</small></span><strong class="delivery-price delivery-price--free">Gratis</strong></label></fieldset><small class="delivery-disclaimer">Los costos son de ejemplo y deben confirmarse con el comercio según el destino.</small></section>
+        <section class="panel-card form-panel" aria-labelledby="delivery-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></span><div><p class="panel-kicker">PASO 3</p><h2 id="delivery-title">Método de entrega</h2><p>El costo se suma al total de tu compra.</p></div></div><fieldset class="delivery-options"><legend class="sr-only">Selecciona un método de entrega</legend><label class="delivery-option"><input type="radio" name="deliveryMethod" value="metropolitana" data-fee="15000" checked><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Domicilio área metropolitana</strong><small>Entrega local coordinada con nosotros</small></span><strong class="delivery-price">+$15.000</strong></label><label class="delivery-option"><input type="radio" name="deliveryMethod" value="nacional" data-fee="25000"><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Envío nacional</strong><small>Para destinos fuera del área metropolitana</small></span><strong class="delivery-price">+$25.000</strong></label><label class="delivery-option"><input type="radio" name="deliveryMethod" value="recoger" data-fee="0"><span class="delivery-radio" aria-hidden="true"></span><span class="delivery-copy"><strong>Recoger en tienda</strong><small>Coordina con nosotros para que pases por tu pedido</small></span><strong class="delivery-price delivery-price--free">Gratis</strong></label></fieldset><small class="delivery-disclaimer">El costo del envío nacional es un promedio aproximado, confirma con nosotros al momento del pago.</small></section>
 
-        <section class="panel-card form-panel payment-panel" aria-labelledby="payment-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></span><div><p class="panel-kicker">PASO 4</p><h2 id="payment-title">Método de pago</h2><p>El comercio te indicará los datos para transferir.</p></div></div><div class="payment-method"><span class="payment-method__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 10h14M6 10v8m4-8v8m4-8v8m4-8v8M3 21h18M4 18h16"></path></svg></span><div><strong>Transferencia bancaria directa</strong><p>Método de pago habilitado: Transferencia bancaria directa.</p><span class="payment-badge">Confirmación pendiente</span></div></div><p class="payment-warning"><span aria-hidden="true">ⓘ</span> Este prototipo no procesa pagos ni verifica transferencias. No ingreses contraseñas ni datos bancarios aquí.</p></section>
+        <section class="panel-card form-panel payment-panel" aria-labelledby="payment-title"><div class="panel-heading"><span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></span><div><p class="panel-kicker">PASO 4</p><h2 id="payment-title">Método de pago</h2><p>¡Te damos los datos para transferir cuando finalices la compra!</p></div></div><div class="payment-method"><span class="payment-method__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 10h14M6 10v8m4-8v8m4-8v8m4-8v8M3 21h18M4 18h16"></path></svg></span><div><strong>Transferencia bancaria directa</strong><p>Método de pago habilitado: Transferencia bancaria directa.</p><span class="payment-badge">Confirmación pendiente</span></div></div><p class="payment-warning"><span aria-hidden="true">ⓘ</span> Estamos desarrollando los pagos en línea directamente desde nuestro página ¡Esperamos tenerlo pronto!</p></section>
       </div>
 
-      <aside class="checkout-summary panel-card" aria-labelledby="summary-title"><div class="summary-heading"><div><p class="panel-kicker">TU COMPRA</p><h2 id="summary-title">Resumen de compra</h2></div><span class="summary-item-count" id="summary-item-count">0 items</span></div><div id="order-items" class="order-items"></div><div class="summary-calculation"><div><span>Subtotal</span><strong id="subtotal-value">$ 0</strong></div><div><span>Envío</span><strong id="shipping-value">$ 15.000</strong></div><div class="summary-total"><span>Total a pagar</span><strong id="total-value">$ 15.000</strong></div></div><div class="summary-payment-note"><span class="summary-payment-note__dot"></span><span>Transferencia bancaria directa<small>El inventario se valida al confirmar el pedido.</small></span></div><p class="checkout-error" id="checkout-error" role="alert" hidden></p><button class="button button--primary button--confirm" id="confirm-order" type="submit">Confirmar pedido <span aria-hidden="true">→</span></button><p class="summary-legal">Al confirmar, se preparará una orden y se abrirá WhatsApp para enviarla al comercio.</p><a class="continue-shopping" href="index.html">← Seguir comprando</a></aside>
+      <aside class="checkout-summary panel-card" aria-labelledby="summary-title"><div class="summary-heading"><div><p class="panel-kicker">TU COMPRA</p><h2 id="summary-title">Resumen de compra</h2></div><span class="summary-item-count" id="summary-item-count">0 items</span></div><div id="order-items" class="order-items"></div><div class="summary-calculation"><div><span>Subtotal</span><strong id="subtotal-value">$ 0</strong></div><div><span>Envío</span><strong id="shipping-value">$ 15.000</strong></div><div class="summary-total"><span>Total a pagar</span><strong id="total-value">$ 15.000</strong></div></div><div class="summary-payment-note"><span class="summary-payment-note__dot"></span><span>Transferencia bancaria directa<small>El inventario se valida al confirmar el pedido.</small></span></div><p class="checkout-error" id="checkout-error" role="alert" hidden></p><button class="button button--primary button--confirm" id="confirm-order" type="submit">Confirmar pedido <span aria-hidden="true">→</span></button><p class="summary-legal">Al confirmar, se preparará una orden y se abrirá WhatsApp para confirmar tu pago.</p><a class="continue-shopping" href="index.html">← Seguir comprando</a></aside>
     </form>
   </main>
 
-  <footer class="site-footer checkout-footer"><div class="container footer-bottom"><span>© <span id="current-year"></span> YCZ 110 Colombia. Inventario y órdenes sincronizados.</span><a href="index.html">Volver al catálogo</a></div></footer>
+  <footer class="site-footer checkout-footer"><div class="container footer-bottom"><span>© <span id="current-year"></span> YCZ 110 Colombia.</span><a href="index.html">Volver al catálogo</a></div></footer>
+
+  <a href="https://wa.me/57XXXXXXXXXX"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="¡Escríbenos por WhatsApp!">
+      <svg viewBox="0 0 24 24"
+           width="29"
+           height="29"
+           fill="currentColor"
+           aria-hidden="true">
+          <path d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0C5.58 0 .28 5.3.28 11.82c0 2.08.55 4.11 1.6 5.9L.2 24l6.43-1.69a11.8 11.8 0 0 0 5.46 1.34h.01c6.52 0 11.82-5.3 11.82-11.82a11.8 11.8 0 0 0-3.4-8.35ZM12.1 21.65h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.82 1 1.02-3.72-.23-.38a9.8 9.8 0 1 1 8.39 4.68Zm5.38-7.34c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.49-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.07-.81.38-.28.3-1.06 1.03-1.06 2.51 0 1.48 1.09 2.91 1.24 3.11.15.2 2.14 3.27 5.19 4.59.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.13-.28-.2-.58-.35Z" />
+      </svg>
+  </a>
+
+  <div id="stock-error-modal" class="stock-modal" aria-hidden="true">
+      <div class="stock-modal__overlay"></div>
+
+      <div class="stock-modal__content" role="alertdialog"
+           aria-modal="true" aria-labelledby="stock-modal-title">
+
+          <div class="stock-modal__icon">!</div>
+
+          <h2 id="stock-modal-title">¡Producto no disponible!</h2>
+
+          <p id="stock-modal-message">
+              Lo sentimos, las existencias de uno o más productos cambiaron.
+          </p>
+
+          <div id="stock-modal-products"></div>
+
+          <p class="stock-modal__hint">
+              Actualiza tu carrito para continuar con tu compra.
+          </p>
+
+          <button id="stock-modal-close" type="button">
+              Entendido
+          </button>
+      </div>
+  </div>
 </body>
 </html>

@@ -4,9 +4,9 @@
 
   /* CONFIGURACIÓN OBLIGATORIA ANTES DE PUBLICAR */
   const WHATSAPP_COMMERCE_NUMBER = '57XXXXXXXXXX'; // Reemplazar por el número real, con indicativo, solo dígitos.
-  const EMAILJS_PUBLIC_KEY = 'TU_EMAILJS_PUBLIC_KEY';
-  const EMAILJS_SERVICE_ID = 'TU_EMAILJS_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'TU_EMAILJS_TEMPLATE_ID';
+  const EMAILJS_PUBLIC_KEY = 'PPpAhPQgC2dp_QB_T';
+  const EMAILJS_SERVICE_ID = 'service_yna4twf';
+  const EMAILJS_TEMPLATE_ID = 'template_bh684oa';
 
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
@@ -14,7 +14,7 @@
   const formatCOP = value => new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(value);
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
   const departmentCities = {
-    'Antioquia': ['Medellín', 'Bello', 'Itagüí', 'Envigado', 'Rionegro', 'Apartadó', 'Sabaneta', 'La Estrella', 'Copacabana', 'Caldas'],
+    'Antioquia': ['Medellín', 'Bello', 'Itagüí', 'Envigado', 'Rionegro', 'Apartadó', 'Sabaneta', 'La Estrella', 'Copacabana', 'Caldas', 'Guarne'],
     'Cundinamarca': ['Soacha', 'Chía', 'Zipaquirá', 'Facatativá', 'Fusagasugá', 'Girardot', 'Madrid', 'Mosquera', 'Funza', 'Cajicá'],
     'Valle del Cauca': ['Cali', 'Palmira', 'Buenaventura', 'Tuluá', 'Buga', 'Jamundí', 'Yumbo', 'Cartago', 'Candelaria'],
     'Atlántico': ['Barranquilla', 'Soledad', 'Malambo', 'Puerto Colombia', 'Sabanalarga'],
@@ -291,6 +291,43 @@
     }
     orderConfirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  function showStockErrorModal(products = []) {
+  const modal = document.getElementById('stock-error-modal');
+  const productsContainer = document.getElementById('stock-modal-products');
+  const closeButton = document.getElementById('stock-modal-close');
+
+  if (!modal || !productsContainer || !closeButton) {
+    alert('Uno o más productos ya no tienen existencias suficientes.');
+    return;
+  }
+
+  productsContainer.innerHTML = '';
+
+  products.forEach(product => {
+    const item = document.createElement('div');
+    item.className = 'stock-modal__product';
+
+    const name = document.createElement('strong');
+    name.textContent = product.name || product.nombre || 'Producto';
+
+    const available = document.createElement('p');
+    available.textContent =
+      `Unidades disponibles: ${product.available ?? product.disponible ?? 0}`;
+
+    item.append(name, available);
+    productsContainer.appendChild(item);
+  });
+
+  modal.classList.add('is-visible');
+  modal.setAttribute('aria-hidden', 'false');
+
+  closeButton.onclick = () => {
+    modal.classList.remove('is-visible');
+    modal.setAttribute('aria-hidden', 'true');
+  };
+}
+
   function clearCartAfterWhatsAppOpen() {
     try { localStorage.removeItem(CART_KEY); } catch (error) { console.warn('No fue posible limpiar el carrito guardado.', error); }
     currentCart = [];

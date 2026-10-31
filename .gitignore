@@ -4,3 +4,20 @@
 .DS_Store
 node_modules/
 .netlify/
+# Archivos temporales de Visual Studio
+.vs/
+
+# Archivos temporales de Visual Studio Code
+.vscode/
+
+# Dependencias
+node_modules/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
